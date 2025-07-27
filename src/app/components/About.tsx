@@ -42,9 +42,9 @@ export default function About() {
           whileInView={{ opacity: 0.8, y: 20 }}
           transition={{ duration: 2.8, ease: 'easeOut' }}
           viewport={{ once: true }}
-          className="text-indigo-300 text-base md:text-lg max-w-2xl mx-auto"> 
+          className="text-indigo-100 text-base md:text-lg max-w-2xl mx-auto"> 
           ICH nace de entender que haciendo lo que nos apasiona podemos construir los cimientos
-          para que pequeñas y medianas empresas logren crecer sosteniblemente.
+          para que PYME's puedan crecer consistente y sosteniblemente, de la mano de su propia estructura.
         </motion.p>
       </div>
     </section>
