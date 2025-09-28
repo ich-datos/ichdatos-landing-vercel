@@ -17,7 +17,7 @@ export default function Hero() {
         </div>
         <div className="flex justify-center mt-10">
           <Image 
-            src="/brochure_1.png" 
+            src="/brochure_1.jpg" 
             alt="ICH Monitores" 
             width={250} 
             height={200} 
@@ -43,7 +43,7 @@ export default function Hero() {
             TRANSFORMÁ<br />TUS DATOS EN<br />INFORMACIÓN
           </h2>
           <Image 
-            src="/br_logo.png" 
+            src="/br_logo.jpg" 
             alt="ICH Logo" 
             width={160} 
             height={160} 
