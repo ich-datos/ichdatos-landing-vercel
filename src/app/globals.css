@@ -1,5 +1,16 @@
+/* src/app/globals.css */
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #fff;
+  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.landing {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.left, .center, .right {
+  width: 30%;
 }
