@@ -3,16 +3,18 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div className="flex h-screen">
-      <div className="flex flex-col justify-between bg-[#1A1A1A] text-white p-10 w-1/3">
+
+      {/* Sección izquierda: Quienes somos */}
+      <div className="flex flex-col justify-between bg-gray-800 text-white p-10 w-1/3">
         <div>
-          <h2 className="text-3xl font-bold mb-6">¿QUIENES SOMOS?</h2>
+          <h2 className="text-3xl font-bold mb-6">¿QUIÉNES SOMOS?</h2>
           <p className="mb-4">
-            Somos una startup, dedicada a la gestión integral de datos e información.
+            Somos una startup dedicada a la gestión integral de datos e información.
           </p>
           <p>
             Nuestra misión se centra en actuar como facilitadores de herramientas
             que le permitan a nuestros clientes contar con la mejor calidad de 
-            información para decidir con fundamentos, el futuro de su negocio.
+            información para decidir con fundamentos el futuro de su negocio.
           </p>
         </div>
         <div className="flex justify-center mt-10">
@@ -26,6 +28,7 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Sección central: Contacto */}
       <div className="flex flex-col justify-center items-center bg-blue-600 text-white p-10 w-1/3">
         <h2 className="text-3xl font-bold mb-6">CONTACTO</h2>
         <ul className="space-y-3 text-lg text-center">
@@ -37,6 +40,7 @@ export default function Hero() {
         </ul>
       </div>
 
+      {/* Sección derecha: Branding */}
       <div className="flex flex-col justify-center items-center bg-gray-100 text-gray-800 p-10 w-1/3">
         <div className="text-center">
           <h2 className="text-4xl font-extrabold text-blue-600 mb-6 leading-tight">
@@ -54,7 +58,7 @@ export default function Hero() {
           </h3>
         </div>
       </div>
-    
-  </div>
-);
+
+    </div>
+  );
 }
