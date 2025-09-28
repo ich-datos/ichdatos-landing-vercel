@@ -1,9 +1,10 @@
 import Hero from "./components/Hero";
+import Test from "./test";
 
 export default function Page() {
   return (
     <main>
-      <Hero />
+      <Test />
       {/* Otros componentes como Services o About */}
     </main>
   );
