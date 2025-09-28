@@ -4,7 +4,7 @@ import Test from "./test";
 export default function Page() {
   return (
     <main>
-      <Test />
+      <Hero />
       {/* Otros componentes como Services o About */}
     </main>
   );
