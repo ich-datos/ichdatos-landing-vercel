@@ -1,0 +1,70 @@
+.hero-container {
+  display: flex;
+  height: 100vh; /* altura completa de la pantalla */
+  width: 100%;
+}
+
+/* Columnas iguales */
+.column {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Izquierda */
+.column.left {
+  background-color: #1A1A1A;
+  color: white;
+  justify-content: space-between;
+}
+
+.column.left .column-content {
+  text-align: left;
+}
+
+.column.left .column-image {
+  margin-top: 2rem;
+}
+
+/* Centro */
+.column.center {
+  background-color: #2563EB; /* azul */
+  color: white;
+  text-align: center;
+}
+
+/* Derecha */
+.column.right {
+  background-color: #F3F4F6; /* gris claro */
+  color: #111827;
+  text-align: center;
+}
+
+.column.right .branding h2 {
+  color: #2563EB; /* azul destacado */
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.column.right .branding h3 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-top: 1rem;
+}
+
+/* Listado de contacto */
+.column.center ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column.center ul li {
+  margin: 0.5rem 0;
+}
