@@ -24,7 +24,7 @@ export default function Hero() {
       {/* Bloque derecho */}
       <div className="right">
         <h1>TRANSFORMÁ TUS DATOS EN INFORMACIÓN</h1>
-        <Image src="/br_logo.png" alt="Logo ICH" width={80} height={80} />
+        <Image src="/logo-ich.png" alt="Logo ICH" width={180} height={180} />
         <h2>GESTIONÁ DE MANERA INTELIGENTE</h2>
       </div>
     </section>
