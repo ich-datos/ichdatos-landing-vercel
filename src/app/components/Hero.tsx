@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex h-screen">
+    <div className="flex v-screen">
 
       {/* Sección izquierda: Quienes somos */}
       <div className="flex flex-col justify-between bg-gray-800 text-white p-10 w-1/3">
