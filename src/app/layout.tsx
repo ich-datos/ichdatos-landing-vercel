@@ -1,13 +1,12 @@
-import "./globals.css"; 
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 
-// Cambiá el nombre de 'nunito' a 'inter' (ya que es la fuente Inter)
+// Fuente Inter (o podés usar Arimo si querés)
 const inter = Inter({
   subsets: ["latin"],
-  weight: ['300', '800'], // podés sumar '400', '700' si querés más pesos
-  });
+  weight: ["300", "800"],
+});
 
 export const metadata: Metadata = {
   title: "Tu PYME, conectada.",
