@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex h-screen">
       {/* Sección principal con 3 columnas */}
       <div className="grid grid-cols-1 md:grid-cols-3 h-screen">
         
         {/* Columna 1: Quienes somos */}
-        <div className="bg-gray-800 text-white p-10 flex flex-col justify-between">
+        <div className="flex flex-col justify-between bg-gray-800 text-white p-10 w-1/3">
           <div>
             <h2 className="text-3xl font-bold mb-6">¿QUIENES SOMOS?</h2>
             <p className="mb-4">
@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
 
         {/* Columna 2: Contacto */}
-        <div className="bg-blue-600 text-white p-10 flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center bg-blue-600 text-white p-10 w-1/3">
           <h2 className="text-3xl font-bold mb-6">CONTACTO</h2>
           <ul className="space-y-3 text-lg text-center">
             <li>📞 351</li>
@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
 
         {/* Columna 3: Branding */}
-        <div className="bg-gray-100 text-gray-800 p-10 flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center bg-gray-100 text-gray-800 p-10 w-1/3">
           <div className="text-center">
             <h2 className="text-4xl font-extrabold text-blue-600 mb-6 leading-tight">
               TRANSFORMÁ<br />TUS DATOS EN<br />INFORMACIÓN
