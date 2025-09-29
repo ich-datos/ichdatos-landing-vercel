@@ -1,15 +1,14 @@
 import Image from "next/image";
-import "./Hero.css"; // CSS específico para el Hero
 
 export default function Hero() {
   return (
-    <div className="hero-container">
+    <div className="flex h-screen">
 
       {/* Sección izquierda: Quienes somos */}
-      <div className="column left">
-        <div className="column-content">
-          <h2>¿QUIÉNES SOMOS?</h2>
-          <p>
+      <div className="flex flex-col justify-between bg-gray-800 text-white p-10 w-1/3">
+        <div>
+          <h2 className="text-3xl font-bold mb-6">¿QUIÉNES SOMOS?</h2>
+          <p className="mb-4">
             Somos una startup dedicada a la gestión integral de datos e información.
           </p>
           <p>
@@ -18,39 +17,43 @@ export default function Hero() {
             información para decidir con fundamentos el futuro de su negocio.
           </p>
         </div>
-        <div className="column-image">
+        <div className="flex justify-center mt-10">
           <Image 
             src="/brochure_1.jpg" 
             alt="ICH Monitores" 
             width={250} 
-            height={200}
+            height={200} 
+            className="object-contain"
           />
         </div>
       </div>
 
       {/* Sección central: Contacto */}
-      <div className="column center">
-        <h2>CONTACTO</h2>
-        <ul>
+      <div className="flex flex-col justify-center items-center bg-blue-600 text-white p-10 w-1/3">
+        <h2 className="text-3xl font-bold mb-6">CONTACTO</h2>
+        <ul className="space-y-3 text-lg text-center">
           <li>📞 351</li>
           <li>📧 info@ichdatos.com.ar</li>
-          <li>🌐 <a href="https://www.ichdatos.com.ar">www.ichdatos.com.ar</a></li>
+          <li>
+            🌐 <a href="https://www.ichdatos.com.ar" className="underline">www.ichdatos.com.ar</a>
+          </li>
         </ul>
       </div>
 
       {/* Sección derecha: Branding */}
-      <div className="column right">
-        <div className="branding">
-          <h2>
+      <div className="flex flex-col justify-center items-center bg-gray-100 text-gray-800 p-10 w-1/3">
+        <div className="text-center">
+          <h2 className="text-4xl font-extrabold text-blue-600 mb-6 leading-tight">
             TRANSFORMÁ<br />TUS DATOS EN<br />INFORMACIÓN
           </h2>
           <Image 
             src="/br_logo.jpg" 
             alt="ICH Logo" 
             width={160} 
-            height={160}
+            height={160} 
+            className="mx-auto my-10"
           />
-          <h3>
+          <h3 className="text-3xl font-bold leading-tight">
             GESTIONÁ DE<br />MANERA<br />INTELIGENTE
           </h3>
         </div>
