@@ -5,7 +5,7 @@ export default function Hero() {
     <div className="flex h-screen">
 
       {/* Sección izquierda: Quienes somos */}
-      <div className="flex flex-col justify-between bg-gray-800 text-white p-10 w-1/3">
+      <div className="flex h-screen flex-col justify-between bg-gray-800 text-white p-10 w-1/3">
         <div>
           <h2 className="text-3xl font-bold mb-6">¿QUIÉNES SOMOS?</h2>
           <p className="mb-4">
