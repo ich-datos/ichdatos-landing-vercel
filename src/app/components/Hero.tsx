@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Columna izquierda */}
       <div className="column left">
         <div className="column-df">
-          <h1>¿QUIÉNES SOMOS?</h1>
+          <h1 className="branh1">¿QUIÉNES SOMOS?</h1>
           <p>
             Somos una startup dedicada a la gestión integral de datos e información.
           </p>
@@ -26,8 +26,8 @@ export default function Hero() {
       <div className="column center">
         <h2>CONTACTO</h2>
         <ul>
-          <li>📞 351 1234567</li>
-          <li>📧 info@ichdatos.com.ar</li>
+          <li>351 1234567</li>
+          <li>info@ichdatos.com.ar</li>
           <li>🌐 <a href="https://www.ichdatos.com.ar">www.ichdatos.com.ar</a></li>
         </ul>
       </div>
@@ -35,11 +35,11 @@ export default function Hero() {
       {/* Columna derecha */}
       <div className="column right">
         <div className="branding">
-          <h2>
+          <h2 className="faded-titulos">
             TRANSFORMÁ<br />TUS DATOS EN<br />INFORMACIÓN
           </h2>
           <Image src="/br_logo.jpg" alt="ICH Logo" width={350} height={350} className="faded-image2"/>
-          <h3>
+          <h3 className="faded-titulos">
             GESTIONÁ DE<br />MANERA<br />INTELIGENTE
           </h3>
         </div>

@@ -2,10 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Arimo } from "next/font/google";
 
-// Fuente Inter (o podés usar Arimo si querés)
 const arimo = Arimo({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["400", "500", "600", "700"], // ✅ pesos válidos
 });
 
 export const metadata: Metadata = {
