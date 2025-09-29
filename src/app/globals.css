@@ -34,8 +34,3 @@ body {
     width: 100%;
   }
 }
-
-.hero-container {
-  display: flex;        /* igual que flex */
-  height: 100vh;        /* igual que h-screen */
-}
