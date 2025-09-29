@@ -1,36 +1,110 @@
-/* src/app/globals.css */
-
-/* 1️⃣ Importar Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 2️⃣ Estilos globales */
-body {
-  margin: 0;
-  font-family: 'Arimo', sans-serif; /* Fuente del brochure */
-  background-color: #f9f9f9;
+/* Contenedor principal */
+.faded-image {
+  opacity: 0.6; /* 50% de opacidad */;
+  margin-bottom: -2.5rem;
+  margin-left: -2;
+  margin-right: -2;
 }
 
-/* 3️⃣ Contenedores opcionales */
+/* Contenedor principal */
+.faded-image2 {
+  opacity: 0.5; /* 50% de opacidad */;
+  margin-bottom: 0rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.column-df {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  padding: 4rem;
+  box-sizing: border-box;
+}
+
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  height: 100vh; /* toda la pantalla */
+  width: 100%;
 }
 
-/* 4️⃣ Ajustes de layout responsive si los necesitás */
-.left, .center, .right {
-  width: 30%;
+/* Columnas */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
+.column.left {
+  display: flex;
+  flex-direction: column; /* organiza verticalmente */
+  justify-content: space-between; /* separa texto e imagen */
+  height: 100%; /* ocupa toda la altura del contenedor padre */
+  padding: 0rem;
+  background-color: #3F3F46;
+  color: white;
+}
+
+/* Columna central */
+.column.center {
+  background-color: #195ca9c9;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+/* Columna derecha */
+.column.right {
+  background-color: #F3F4F6;
+  color: #111827;
+  align-items: center;
+  text-align: center;
+}
+
+/* Branding derecha */
+.column.right .branding h2 {
+  color: #394fa7;
+  font-weight: 800;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.column.right .branding h3 {
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+}
+
+/* Imagen izquierda */
+.column.left .column-image {
+  margin-bottom: 0rem;
+}
+
+/* Contacto columna central */
+.column.center ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column.center ul li {
+  margin: 0.5rem 0;
+}
+
+/* Responsive: columnas verticales en móvil */
 @media (max-width: 768px) {
-  .landing {
+  .container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    height: auto;
   }
-  .landing > div {
+  .column {
     width: 100%;
+    margin-bottom: 2rem;
   }
 }
