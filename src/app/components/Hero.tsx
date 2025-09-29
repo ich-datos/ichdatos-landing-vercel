@@ -28,7 +28,15 @@ export default function Hero() {
         <ul>
           <li>351 1234567</li>
           <li>info@ichdatos.com.ar</li>
-          <li>🌐 <a href="https://www.ichdatos.com.ar">www.ichdatos.com.ar</a></li>
+          {/* Botón para agendar cita */}
+          <a
+            href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Reunión+con+ICH&dates=20251001T150000Z/20251001T160000Z&details=Agendá+tu+cita&location=https://www.ichdatos.com.ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 mt-6 inline-block"
+          >
+            Agendar Cita
+          </a>
         </ul>
       </div>
 
