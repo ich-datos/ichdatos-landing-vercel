@@ -4,7 +4,7 @@
 .contform {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   background-color: rgba(54, 57, 106, 0.1); /* semitransparente */
   padding: 1.5rem;
   border-radius: 20px;
@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: column;
   justify-content: right;
-  padding: 4rem;
+  padding: 4.1rem;
   box-sizing: border-box;
 }
 
@@ -106,13 +106,13 @@
 
 .column.left {
   font-family: 'Arimo';
-  font-weight: 1;     /* peso normal */
-  font-size: 1.5rem;
+  font-weight: 1.4;     /* peso normal */
+  font-size: 1.4rem;
   display: flex;
   flex-direction: column; /* organiza verticalmente */
   justify-content: space-between; /* separa texto e imagen */
   height: 100%; /* ocupa toda la altura del contenedor padre */
-  padding: 0rem;
+  padding: 0.05rem;
   background-color: #3F3F46;
   color: white;
 }
@@ -145,7 +145,7 @@
 .column.right {
   font-family: 'Arimo';
   font-weight: 500;     /* peso normal */
-  font-size: 1rem;
+  font-size: 1.2rem;
   background-color: #F3F4F6;
   color: #111827;
   align-items: center;
@@ -176,7 +176,7 @@
 
 /* Imagen izquierda */
 .column.left .column-image {
-  margin-bottom: 0rem;
+  margin-bottom: 0.05rem;
 }
 
 /* Contacto columna central */
