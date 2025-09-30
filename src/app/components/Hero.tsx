@@ -35,13 +35,12 @@ export default function Hero() {
           </p>
         </div>
         <div className="column-image">
-          <Image src="/brochure_1.jpg" alt="ICH Monitores" width={600} height={250} className="faded-image"/>
+          <Image src="/brochure_2.jpg" alt="ICH Monitores" width={600} height={250} className="faded-image"/>
         </div>
       </div>
 
       {/* Columna central */}
       <div className="column center">
-        <h2>CONTACTO</h2>
         <ul>
           <form
             onSubmit={handleSubmit}
@@ -53,8 +52,8 @@ export default function Hero() {
             <input type="celular" name="celular" placeholder="Teléfono" required />
             <input type="datetime-local" name="fecha" required />
             <textarea name="comentarios" placeholder="Comentarios"></textarea>
-            <button type="submit" className="bg-blue-800 text-white px-6 py-3 rounded hover:bg-blue-700">
-              Agendar cita
+            <button type="submit">
+              AGENDAR CITA
             </button>
           </form>
         </ul>
