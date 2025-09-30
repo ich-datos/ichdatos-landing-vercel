@@ -1,4 +1,16 @@
 /* Contenedor principal */
+/* Contenedor principal */
+.contform {
+  opacity: 0.9; /* 50% de opacidad */;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+
 .faded-titulos {
   opacity: 0.7; /* 50% de opacidad */;
 }
