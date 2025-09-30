@@ -1,15 +1,63 @@
 /* Contenedor principal */
 /* Contenedor principal */
+/* Formulario Hero */
 .contform {
-  opacity: 0.9; /* 50% de opacidad */;
-  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: right;
-  padding: 2rem;
-  box-sizing: border-box;
+  gap: 1rem;
+  background-color: rgba(54, 57, 106, 0.1); /* semitransparente */
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 350px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px); /* efecto glass */
 }
 
+.contform input,
+.contform textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.contform input:focus,
+.contform textarea:focus {
+  border-color: #1e3a8a; /* azul oscuro */
+  box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
+}
+
+.contform textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.contform button {
+  background-color: #1e3a8a;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.contform button:hover {
+  background-color: #1b2f77;
+}
+
+.contform {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contform input,
+.contform textarea,
+.contform button {
+  font-family: 'Arimo', sans-serif;
+}
 
 .faded-titulos {
   opacity: 0.7; /* 50% de opacidad */;

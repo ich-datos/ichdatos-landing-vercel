@@ -23,9 +23,9 @@ export async function POST(req: NextRequest) {
       to: ["marlen@ichdatos.com.ar", "francisco@ichdatos.com.ar"], // los dos destinatarios
       subject: `Nueva cita de ${nombre}`,
       text: `Nombre: ${nombre}
-Email: ${email}
-Fecha: ${fecha}
-Comentarios: ${comentarios}`,
+            Email: ${email}
+            Fecha: ${fecha}
+            Comentarios: ${comentarios}`,
     });
 
     return NextResponse.json({ ok: true });

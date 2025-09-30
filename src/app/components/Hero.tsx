@@ -43,8 +43,6 @@ export default function Hero() {
       <div className="column center">
         <h2>CONTACTO</h2>
         <ul>
-          {/*<li>351 1234567</li>
-          <li>info@ichdatos.com.ar</li>*/}
           <form
             onSubmit={handleSubmit}
             className="contform"
