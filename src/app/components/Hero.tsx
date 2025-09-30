@@ -47,8 +47,10 @@ export default function Hero() {
             onSubmit={handleSubmit}
             className="contform"
           >
-            <input type="text" name="nombre" placeholder="Tu nombre" required />
-            <input type="email" name="email" placeholder="Tu correo" required />
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input type="celular" name="empresa" placeholder="Empresa" required />
+            <input type="email" name="email" placeholder="Correo" required />
+            <input type="celular" name="celular" placeholder="Teléfono" required />
             <input type="datetime-local" name="fecha" required />
             <textarea name="comentarios" placeholder="Comentarios"></textarea>
             <button type="submit" className="bg-blue-800 text-white px-6 py-3 rounded hover:bg-blue-700">
