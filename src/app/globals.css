@@ -216,7 +216,7 @@ html, body {
     flex-direction: column;
     height: auto;
     min-height: 250vh;
-    gap: 1px;
+    gap: 0px;
     padding: 0.5rem 1rem;
     width: 100%;
   }
