@@ -234,7 +234,7 @@ html, body {
   }
 
   .column.left .column-df {
-    margin-bottom: 1rem;
+    margin-bottom: 8rem;
     z-index: 1; /* asegura que el texto quede arriba de la imagen */
   }
 
