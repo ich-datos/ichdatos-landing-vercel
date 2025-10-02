@@ -1,6 +1,18 @@
-/* Contenedor principal */
-/* Contenedor principal */
-/* Formulario Hero */
+.container {
+  display: flex;
+  height: 100vh; /* toda la pantalla */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto; /* deja que la altura se ajuste al contenido */
+  }
+}
+
+
+
 .contform {
   display: flex;
   flex-direction: column;
@@ -88,11 +100,7 @@
   box-sizing: border-box;
 }
 
-.container {
-  display: flex;
-  height: 100vh; /* toda la pantalla */
-  width: 100%;
-}
+
 
 /* Columnas */
 .column {
@@ -190,35 +198,23 @@
   margin: 0.5rem 0;
 }
 
-/* Responsive: columnas verticales en móvil */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
-  .column {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-}
-
 /* =========================
-   Ajustes extra para MOBILE
+   Responsive Mobile
    ========================= */
 @media (max-width: 768px) {
-  /* Que el contenedor deje de forzar altura completa
-     y las columnas se apilen bien */
+  /* Contenedor principal */
   .container {
     flex-direction: column;
-    height: auto;
+    height: auto;      /* deja que la altura se ajuste al contenido */
     padding: 1rem;
   }
 
+  /* Columnas */
   .column {
     width: 100%;
     padding: 1.5rem;
-    margin-bottom: 2rem;        /* espacio entre bloques */
-    text-align: center;         /* centrar textos en móvil */
+    margin-bottom: 2rem;    /* espacio entre bloques */
+    text-align: center;      /* centrar textos en móvil */
     align-items: center;
   }
 
@@ -228,7 +224,7 @@
   .column.right .branding h3 {
     font-size: clamp(1.4rem, 6vw, 2rem);
     line-height: 1.2;
-    transform: none;            /* quitar scaleY en pantallas chicas */
+    transform: none;        /* quitar scaleY en pantallas chicas */
   }
 
   /* Imágenes: que no se desborden */
