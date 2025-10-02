@@ -76,11 +76,12 @@ html, body {
   opacity: 0.7; /* 70% de opacidad */;
 }
 
+.column.left .column-image img,
 .faded-image {
-  opacity: 0.6; /* 50% de opacidad */;
-  margin-bottom: 0rem;
-  margin-left: 1;
-  margin-right: 1;
+  width: 100%;        /* ocupa todo el ancho */
+  height: auto;       /* mantiene proporción */
+  opacity: 0.6;
+  display: block;
 }
 
 /* Contenedor principal */
@@ -113,6 +114,8 @@ html, body {
 }
 
 .column.left {
+  position: relative; /* clave para que la imagen absoluta se posicione dentro */
+  flex:1.2;
   font-family: 'Arimo';
   font-weight: 1.4;     /* peso normal */
   font-size: 1.4rem;
@@ -184,7 +187,10 @@ html, body {
 
 /* Imagen izquierda */
 .column.left .column-image {
-  margin-bottom: 0.05rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /* Contacto columna central */
@@ -242,7 +248,7 @@ html, body {
   .faded-image2 {
     max-width: 100%;
     height: auto;
-    margin: 0 auto;
+    margin: auto;
   }
 
   /* Formulario centrado y ancho mayor en mobile */

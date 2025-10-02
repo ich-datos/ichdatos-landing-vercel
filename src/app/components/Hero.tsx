@@ -58,7 +58,7 @@ export default function Hero() {
           </form>
         </ul>
         <h5 style={{ fontFamily: 'Arimo, sans-serif', 
-                    fontSize: '1.2rem'
+                    fontSize: '0.8rem'
                   }}>
           info@ichdatos.com.ar
         </h5>
