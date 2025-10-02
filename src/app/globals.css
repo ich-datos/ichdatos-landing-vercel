@@ -201,7 +201,7 @@ html, body {
 /* =========================
    Responsive Mobile
    ========================= */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   /* Reset márgenes y paddings extra */
   html, body {
     margin: 0;
@@ -209,18 +209,15 @@ html, body {
   }
   /* Contenedor principal */
   .container {
-    flex-direction: column;
-    height: auto;      /* deja que la altura se ajuste al contenido */
-    padding: 1rem;
+    padding: 0; /* quitar padding extra que empuja contenido */
+    width: 100%;
+    min-height: 100vh;
   }
 
   /* Columnas */
   .column {
-    width: 100%;
-    padding: 1.5rem;
-    margin-bottom: 2rem;    /* espacio entre bloques */
-    text-align: center;      /* centrar textos en móvil */
-    align-items: center;
+    padding: 1rem; /* ajustar un poco menor que antes */
+    margin-bottom: 1rem;
   }
 
   /* Títulos grandes: reducir tamaño para que no se corte */
