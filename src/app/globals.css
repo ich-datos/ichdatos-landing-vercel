@@ -202,6 +202,11 @@ html, body {
    Responsive Mobile
    ========================= */
 @media (max-width: 768px) {
+  /* Reset márgenes y paddings extra */
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
   /* Contenedor principal */
   .container {
     flex-direction: column;
