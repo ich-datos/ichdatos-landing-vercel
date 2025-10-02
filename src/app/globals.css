@@ -15,7 +15,7 @@ html, body {
 .container {
   display: flex;
   flex-direction: row;
-  gap: 1rem ;
+  gap: 0rem ;
   height: 100vh; /* toda la pantalla */
   width: 100%;
 }
@@ -26,10 +26,10 @@ html, body {
 .contform {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.5rem;
   background-color: rgba(54, 57, 106, 0.1);
-  padding: 1.5rem;
-  border-radius: 20px;
+  padding: 1rem;
+  border-radius: 10px;
   max-width: 250px;
   margin: 0 auto;
   backdrop-filter: blur(10px);
