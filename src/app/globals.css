@@ -221,7 +221,7 @@ html, body {
   .column {
     width: 100%;
     padding: 1.2rem 1rem;
-    margin-bottom: 1.5rem;  /* espacio uniforme entre bloques */
+    margin-bottom: 0rem;  /* espacio uniforme entre bloques */
     text-align: center;
     align-items: center;
   }
