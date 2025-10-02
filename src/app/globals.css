@@ -215,11 +215,10 @@ html, body {
   .container {
     flex-direction: column;
     height: auto;
-    min-height: 700;
+    min-height: 250vh;
     gap: 1px;
     padding: 0.5rem 1rem;
     width: 100%;
-    min-height: 100vh;
   }
 
   .column {
