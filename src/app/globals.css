@@ -215,6 +215,7 @@ html, body {
   .container {
     flex-direction: column;
     height: auto;
+    gap: 1px;
     padding: 0.5rem 1rem;
     width: 100%;
     min-height: 100vh;
@@ -234,6 +235,14 @@ html, body {
     flex: 1 1 100%;
     justify-content: flex-start;
     padding: 0.5rem 1rem 1rem 1rem;
+  }
+
+  .column.right {
+    order: 1;  /* primero */
+  }
+
+  .column.center {
+    order: 3;  /* último */
   }
 
   .column.left .column-df {
@@ -256,12 +265,6 @@ html, body {
   }
 
   .branh1,
-  .column.right {
-    order: 1;
-  }
-  .column.center {
-    order: 3;
-  }
   .column.right .branding h2,
   .column.right .branding h3 {
     font-size: clamp(1.4rem, 6vw, 2rem);
