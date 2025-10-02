@@ -1,4 +1,6 @@
-/* Reset básico para que no haya márgenes blancos inesperados */
+/* =========================
+   Reset básico
+   ========================= */
 html, body {
   margin: 0;
   padding: 0;
@@ -7,22 +9,30 @@ html, body {
   height: 100%;
 }
 
+/* =========================
+   Contenedor principal
+   ========================= */
 .container {
   display: flex;
   height: 100vh; /* toda la pantalla */
   width: 100%;
 }
 
+/* =========================
+   Formularios
+   ========================= */
 .contform {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background-color: rgba(54, 57, 106, 0.1); /* semitransparente */
+  background-color: rgba(54, 57, 106, 0.1);
   padding: 1.5rem;
   border-radius: 20px;
   max-width: 250px;
   margin: 0 auto;
-  backdrop-filter: blur(10px); /* efecto glass */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 5px rgba(0,0,0,0.15);
+  font-family: 'Arimo', sans-serif;
 }
 
 .contform input,
@@ -37,7 +47,7 @@ html, body {
 
 .contform input:focus,
 .contform textarea:focus {
-  border-color: #1e3a8a; /* azul oscuro */
+  border-color: #1e3a8a;
   box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
 }
 
@@ -62,34 +72,17 @@ html, body {
   background-color: #16286b;
 }
 
-.contform {
-  box-shadow: 0 8px 5px rgba(0,0,0,0.15);
-}
-
 .contform input,
 .contform textarea,
 .contform button {
   font-family: 'Arimo', sans-serif;
 }
 
+/* =========================
+   Estilos generales
+   ========================= */
 .faded-titulos {
-  opacity: 0.7; /* 70% de opacidad */;
-}
-
-.column.left .column-image img,
-.faded-image {
-  width: 100%;        /* ocupa todo el ancho */
-  height: auto;       /* mantiene proporción */
-  opacity: 0.6;
-  display: block;
-}
-
-/* Contenedor principal */
-.faded-image2 {
-  opacity: 0.5; /* 50% de opacidad */;
-  margin-bottom: 0rem;
-  margin-left: 0;
-  margin-right: 0;
+  opacity: 0.7;
 }
 
 .column-df {
@@ -101,9 +94,9 @@ html, body {
   box-sizing: border-box;
 }
 
-
-
-/* Columnas */
+/* =========================
+   Columnas
+   ========================= */
 .column {
   flex: 1;
   display: flex;
@@ -113,38 +106,40 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Columna izquierda */
 .column.left {
-  position: relative; /* clave para que la imagen absoluta se posicione dentro */
-  flex:1.3;
+  position: relative; /* clave para imagen absoluta */
+  flex: 1.3;
   font-family: 'Arimo';
-  font-weight: 1.4;     /* peso normal */
+  font-weight: 400;
   font-size: 1.4rem;
-  display: flex;
-  flex-direction: column; /* organiza verticalmente */
-  justify-content: space-between; /* separa texto e imagen */
-  height: 100%; /* ocupa toda la altura del contenedor padre */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   padding: 0.05rem;
   background-color: #3F3F46;
   color: white;
 }
 
-/* Branding derecha */
-.branh1 {
-  color: #edf6fb;
-  font-weight: 10000;
-  font-size: 2.2rem;
-  line-height: 1.5;
-  margin-bottom: 0.1rem;
-  transform: scaleY(1.5);   /* 1.0 = sin cambio. 1.3 = 30 % más alto */
-  display: inline-block;    /* necesario para que transform funcione en texto */
-  transform-origin: bottom;
+.column.left .column-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
+.column.left .column-image img,
+.faded-image {
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+  display: block;
+}
 
 /* Columna central */
 .column.center {
   font-family: 'Arimo';
-  font-weight: 600;     /* peso normal */
+  font-weight: 600;
   font-size: 1.2rem;
   background-color: #195ca9c9;
   color: white;
@@ -155,7 +150,7 @@ html, body {
 /* Columna derecha */
 .column.right {
   font-family: 'Arimo';
-  font-weight: 500;     /* peso normal */
+  font-weight: 500;
   font-size: 1.2rem;
   background-color: #F3F4F6;
   color: #111827;
@@ -163,15 +158,28 @@ html, body {
   text-align: center;
 }
 
-/* Branding derecha */
+/* =========================
+   Títulos
+   ========================= */
+.branh1 {
+  color: #edf6fb;
+  font-weight: 10000;
+  font-size: 2.2rem;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
+  transform: scaleY(1.5);
+  display: inline-block;
+  transform-origin: bottom;
+}
+
 .column.right .branding h2 {
   color: #136f9d;
   font-weight: 10000;
   font-size: 2.8rem;
   line-height: 0.9;
   margin-bottom: 0.1rem;
-  transform: scaleY(1.3);   /* 1.0 = sin cambio. 1.3 = 30 % más alto */
-  display: inline-block;    /* necesario para que transform funcione en texto */
+  transform: scaleY(1.3);
+  display: inline-block;
   transform-origin: bottom;
 }
 
@@ -180,20 +188,14 @@ html, body {
   font-size: 3rem;
   line-height: 0.9;
   margin-top: 0.5rem;
-  transform: scaleY(1.3);   /* 1.0 = sin cambio. 1.3 = 30 % más alto */
-  display: inline-block;    /* necesario para que transform funcione en texto */
+  transform: scaleY(1.3);
+  display: inline-block;
   transform-origin: bottom;
 }
 
-/* Imagen izquierda */
-.column.left .column-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-/* Contacto columna central */
+/* =========================
+   Listas
+   ========================= */
 .column.center ul {
   list-style: none;
   padding: 0;
@@ -208,46 +210,39 @@ html, body {
    Responsive Mobile
    ========================= */
 @media (max-width: 768px) {
-  /* Reset márgenes y paddings */
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Contenedor principal */
   .container {
     flex-direction: column;
     height: auto;
-    padding: 0.5rem 1rem; /* un poco de espacio lateral */
+    padding: 0.5rem 1rem;
     width: 100%;
     min-height: 100vh;
   }
 
-  /* Columnas apiladas con espaciado uniforme */
   .column {
     width: 100%;
     padding: 1.2rem 1rem;
-    margin-bottom: 0rem;  /* espacio uniforme entre bloques */
+    margin-bottom: 0;
     text-align: center;
     align-items: center;
   }
+
   .column.left {
-    flex: 1 1 100%;         /* ocupa todo el ancho en mobile */
-    justify-content: flex-start; 
+    flex: 1 1 100%;
+    justify-content: flex-start;
     padding: 1rem;
   }
 
   .column.left .column-df {
-    margin-bottom: 1rem;    /* deja espacio entre texto e imagen */
+    margin-bottom: 1rem;
   }
 
   .column.left .column-image {
-    position: relative;     /* resetea lo absoluto que usamos en desktop */
+    position: relative; /* reset */
     bottom: auto;
     left: auto;
     right: auto;
-    width: 100%;            /* ocupa el ancho */
-    margin: 0 auto;         /* centrado */
+    width: 100%;
+    margin: 0 auto;
   }
 
   .column.left .column-image img {
@@ -256,38 +251,13 @@ html, body {
     display: block;
     margin: 0 auto;
   }
-  
-  /* Títulos grandes */
+
   .branh1,
   .column.right .branding h2,
   .column.right .branding h3 {
     font-size: clamp(1.4rem, 6vw, 2rem);
     line-height: 1.2;
-    transform: none; /* quitar scaleY en pantallas chicas */
-  }
-
-  /* Imágenes: que no se desborden */
-  .column-image img,
-  .branding img,
-  .faded-image,
-  .faded-image2 {
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-  }
-
-  /* Formulario centrado y ancho mayor en mobile */
-  .contform {
-    max-width: 90%;
-    padding: 1.2rem;
-    gap: 0.75rem;
-  }
-
-  .contform input,
-  .contform textarea,
-  .contform button {
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
+    transform: none;
   }
 }
 
@@ -296,22 +266,20 @@ html, body {
    ========================= */
 @media (max-width: 400px) {
   .container {
-    padding: 0; /* quitar padding extra que empuja contenido */
+    padding: 0;
   }
 
   .column {
-    padding: 0.8rem 0.5rem;      /* un poco menos que en 768px */
-    margin-bottom: 0rem;         /* espacio más compacto entre bloques */
+    padding: 0.8rem 0.5rem;
+    margin-bottom: 0;
   }
 
-  /* Ajuste de títulos para pantallas muy pequeñas */
   .branh1,
   .column.right .branding h2,
   .column.right .branding h3 {
     font-size: clamp(1.2rem, 5vw, 1.8rem);
   }
 
-  /* Formulario más cómodo en pantallas muy pequeñas */
   .contform {
     max-width: 95%;
     padding: 0.8rem 0.5rem;
