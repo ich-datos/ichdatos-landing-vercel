@@ -57,6 +57,11 @@ export default function Hero() {
             </button>
           </form>
         </ul>
+        <h5 style={{ fontFamily: 'Arimo, sans-serif', 
+                    fontSize: '1.2rem'
+                  }}>
+          info@ichdatos.com.ar
+        </h5>
       </div>
 
       {/* Columna derecha */}
