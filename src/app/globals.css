@@ -230,7 +230,7 @@ html, body {
   .column.left {
     flex: 1 1 100%;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 0.5rem 1rem 1rem 1rem;
   }
 
   .column.left .column-df {
