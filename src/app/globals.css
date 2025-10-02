@@ -232,7 +232,7 @@ html, body {
   /* Ajustes columna izquierda */
   .column.left {
     order:2;
-    flex: 1 1 100%;
+    flex: 1 1 auto;
     justify-content: flex-start;
     padding: 0.5rem 1rem 1rem 1rem;
   }
