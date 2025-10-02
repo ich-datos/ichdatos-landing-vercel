@@ -270,7 +270,7 @@ html, body {
 
   .column {
     padding: 0.8rem 0.5rem;      /* un poco menos que en 768px */
-    margin-bottom: 1rem;         /* espacio más compacto entre bloques */
+    margin-bottom: 0rem;         /* espacio más compacto entre bloques */
   }
 
   /* Ajuste de títulos para pantallas muy pequeñas */
