@@ -8,7 +8,7 @@ const arimo = Arimo({
 });
 
 export const metadata: Metadata = {
-  title: "Tu PYME, conectada.",
+  title: "Tu empresa, conectada.",
   description: "Powered by ICH",
 };
 
