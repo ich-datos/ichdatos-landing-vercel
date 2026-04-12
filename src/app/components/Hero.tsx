@@ -1,117 +1,79 @@
 "use client";
 
-import { useState, useEffect } from "react";import Image from "next/image";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-
-    const res = await fetch("/api/agendar", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-
-    if (res.ok) alert("Cita agendada correctamente");
-    else alert("Error al agendar cita");
-  };
 
   return (
     <>
-      {/* 1. Bloque del Preloader */}
+      {/* 1. Preloader Minimalista */}
       {loading && (
-        <div className="preloader" style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100vh',
-          backgroundColor: 'white',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          zIndex: 9999
-        }}>
-          <Image 
-            src="/logo ich (1).svg" 
-            alt="Cargando..." 
-            width={200} 
-            height={200} 
-            style={{ animation: 'fadeIn 1.5s forwards' }}
-          />
+        <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999]">
+          <Image src="/logo ich (1).svg" alt="ICH Logo" width={120} height={120} className="animate-pulse" />
+          <div className="w-12 h-[1px] bg-blue-600 mt-4 animate-scale-x"></div>
         </div>
       )}
 
-      {/* 2. Contenido Principal */}
-      <div className="container" style={{ 
-        opacity: loading ? 0 : 1, 
-        transition: 'opacity 0.8s ease-in-out' 
-      }}>
-
-        {/* Columna izquierda */}
-        <div className="column left">
-          <div className="column-df">
-            <h1 className="branh1">¿QUIÉNES SOMOS?</h1>
-            <p>
-              Somos una startup dedicada a la gestión integral de datos e información.
-            </p>
-            <p>
-              Nuestra misión se centra en actuar como facilitadores de herramientas
-              que le permitan a nuestros clientes contar con la mejor calidad de 
-              información para decidir con fundamentos el futuro de su negocio.
-            </p>
+      {/* 2. Contenido con Efecto Hero */}
+      <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0' : 'opacity-100'}`}>
+        
+        <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+          
+          {/* IMAGEN CON EFECTO DE DESPLAZAMIENTO */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <Image 
+              src="/brochure_2.jpg" 
+              alt="ICH Data Management" 
+              fill 
+              className="object-cover animate-subtle-zoom" // <-- El efecto de desplazamiento
+              priority
+            />
+            {/* CAPA DE CONTRASTE (OVERLAY): Esto hace que el texto resalte */}
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
           </div>
-          <div className="column-image">
-            <Image src="/brochure_2.jpg" alt="ICH Monitores" width={600} height={250} className="faded-image"/>
-          </div>
-        </div>
 
-        {/* Columna central */}
-        <div className="column center">
-          <ul>
-            <form
-              onSubmit={handleSubmit}
-              className="contform"
+          {/* TEXTO PRINCIPAL CON CONTRASTE ALTO */}
+          <div className="relative z-10 text-center px-6 animate-fade-up">
+            <h1 className="text-white text-5xl md:text-8xl font-light tracking-tighter mb-4">
+              TRANSFORMÁ TUS <span className="font-bold text-blue-500 italic">DATOS</span>
+            </h1>
+            <p className="text-gray-100 text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-light tracking-wide">
+              Gestión integral de información para decisiones estratégicas de alto nivel.
+            </p>
+            
+            {/* BOTÓN EJECUTIVO */}
+            <button 
+              onClick={() => window.location.href = '/agendar'} 
+              className="px-12 py-4 bg-blue-600 text-white font-bold tracking-[0.2em] hover:bg-white hover:text-blue-600 transition-all duration-500 rounded-full text-xs shadow-2xl"
             >
-              <input type="text" name="nombre" placeholder="Nombre" required />
-              <input type="text" name="empresa" placeholder="Empresa" required />
-              <input type="email" name="email" placeholder="Correo" required />
-              <input type="tel" name="celular" placeholder="Teléfono" required />
-              <input type="datetime-local" name="fecha" required />
-              <textarea name="comentarios" placeholder="Comentarios"></textarea>
-              <button type="submit">
-                AGENDAR CITA
-              </button>
-            </form>
-          </ul>
-          <h5 style={{ fontFamily: 'Arimo, sans-serif', fontSize: '0.8rem' }}>
-            info@ichdatos.com.ar
-          </h5>
-        </div>
-
-        {/* Columna derecha */}
-        <div className="column right">
-          <div className="branding">
-            <h2 className="faded-titulos">
-              TRANSFORMÁ<br />TUS DATOS EN<br />INFORMACIÓN
-            </h2>
-            <Image src="/br_logo.jpg" alt="ICH Logo" width={350} height={350} className="faded-image2"/>
-            <h3 className="faded-titulos">
-              GESTIONÁ DE<br />MANERA<br />INTELIGENTE
-            </h3>
+              AGENDAR CITA EJECUTIVA
+            </button>
           </div>
-        </div>
 
+          {/* SCROLL INDICATOR */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+            <span className="text-[10px] tracking-[0.4em] uppercase font-bold">Scroll</span>
+          </div>
+        </section>
+
+        {/* SECCIÓN INFERIOR DE CONTENIDO (Para seguir bajando) */}
+        <section className="py-32 bg-white flex flex-col items-center">
+           <div className="max-w-4xl text-center px-6">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">Estrategia Basada en Evidencia</h2>
+              <p className="text-gray-500 text-lg leading-relaxed mb-12">
+                En ICH facilitamos herramientas de alta precisión que permiten a nuestros clientes contar 
+                con la mejor calidad de información para decidir con fundamentos el futuro de su negocio.
+              </p>
+              <div className="w-16 h-1 bg-blue-600 mx-auto"></div>
+           </div>
+        </section>
       </div>
     </>
   );

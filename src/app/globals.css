@@ -1,324 +1,47 @@
-/* =========================
-   Reset básico
-   ========================= */
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+@import "tailwindcss";
+@source "./components/**/*.{tsx,ts}";
+@source "./page.tsx";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+  --color-brand-blue: #0047FF;
 }
 
-/* =========================
-   Contenedor principal
-   ========================= */
-.container {
-  display: flex;
-  flex-direction: row;
-  gap: 0rem ;
-  min-height: 100vh;
-  height:auto;
-  width: 100%;
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
-/* =========================
-   Formularios
-   ========================= */
-.contform {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  background-color: rgba(54, 57, 106, 0.1);
-  padding: 1rem;
-  border-radius: 10px;
-  max-width: 250px;
-  margin: 0 auto;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 5px rgba(0,0,0,0.15);
-  font-family: 'Arimo', sans-serif;
+/* --- ANIMACIONES PARA EL EFECTO DE DESPLAZAMIENTO --- */
+
+@keyframes subtle-zoom {
+  from { transform: scale(1.15); } /* Empieza más cerca */
+  to { transform: scale(1.0); }    /* Se aleja suavemente */
 }
 
-.contform input,
-.contform textarea {
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  outline: none;
-  transition: all 0.2s;
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.contform input:focus,
-.contform textarea:focus {
-  border-color: #1e3a8a;
-  box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
+@keyframes scale-x {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
 }
 
-.contform textarea {
-  resize: vertical;
-  min-height: 40px;
+.animate-subtle-zoom {
+  animation: subtle-zoom 12s ease-out forwards;
 }
 
-.contform button {
-  background-color: #1e3a8a;
-  color: white;
-  font-weight: 1000;
-  font-size: 1.3rem;
-  padding: 1rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
+.animate-fade-up {
+  animation: fade-up 1.5s ease-out forwards;
 }
 
-.contform button:hover {
-  background-color: #16286b;
-}
-
-.contform input,
-.contform textarea,
-.contform button {
-  font-family: 'Arimo', sans-serif;
-}
-
-/* =========================
-   Estilos generales
-   ========================= */
-.faded-titulos {
-  opacity: 0.7;
-}
-
-.column-df {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 4.1rem;
-  box-sizing: border-box;
-}
-
-/* =========================
-   Columnas
-   ========================= */
-.column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-/* Columna izquierda */
-.column.left {
-  position: relative; /* clave para imagen absoluta */
-  flex: 1.3;
-  font-family: 'Arimo';
-  font-weight: 400;
-  font-size: 1.4rem;
-  flex-direction: column;
-  justify-content: space-between;
-  height: auto;
-  padding: 0.05rem;
-  background-color: #3F3F46;
-  color: white;
-}
-
-.column.left .column-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.column.left .column-image img,
-.faded-image {
-  width: 100%;
-  height: auto;
-  opacity: 0.6;
-  display: block;
-}
-
-/* Columna central */
-.column.center {
-  font-family: 'Arimo';
-  font-weight: 600;
-  font-size: 1.2rem;
-  background-color: #195ca9c9;
-  color: white;
-  align-items: center;
-  text-align: center;
-}
-
-/* Columna derecha */
-.column.right {
-  font-family: 'Arimo';
-  font-weight: 500;
-  font-size: 1.2rem;
-  background-color: #F3F4F6;
-  color: #111827;
-  align-items: center;
-  text-align: center;
-}
-
-/* =========================
-   Títulos
-   ========================= */
-.branh1 {
-  color: #edf6fb;
-  font-weight: 10000;
-  font-size: 2.2rem;
-  line-height: 1.5;
-  margin-bottom: 0.1rem;
-  transform: scaleY(1.5);
-  display: inline-block;
-  transform-origin: bottom;
-}
-
-.column.right .branding h2 {
-  color: #136f9d;
-  font-weight: 10000;
-  font-size: 2.8rem;
-  line-height: 0.9;
-  margin-bottom: 0.1rem;
-  transform: scaleY(1.3);
-  display: inline-block;
-  transform-origin: bottom;
-}
-
-.column.right .branding h3 {
-  font-weight: 200000;
-  font-size: 3rem;
-  line-height: 0.9;
-  margin-top: 0.5rem;
-  transform: scaleY(1.3);
-  display: inline-block;
-  transform-origin: bottom;
-}
-
-/* =========================
-   Listas
-   ========================= */
-.column.center ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.column.center ul li {
-  margin: 0.5rem 0;
-}
-
-/* =========================
-   Responsive Mobile
-   ========================= */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-    min-height: 300vh;
-    gap: 0px;
-    padding: 0.5rem 1rem;
-    width: 100%;
-  }
-
-  .column {
-    width: 100%;
-    padding: 1.2rem 1rem;
-    margin-bottom: 0;
-    text-align: center;
-    align-items: center;
-  }
-
-  /* Ajustes columna izquierda */
-  .column.left {
-    order:2;
-    flex: 1 1 100%;
-    justify-content: flex-start;
-    padding: 0.5rem 1rem 1rem 1rem;
-  }
-
-  .column.right {
-    order: 1;  /* primero */
-  }
-
-  .column.center {
-    order: 3;  /* último */
-  }
-
-  .column.left .column-df {
-    margin-bottom: 8rem;
-    z-index: 1; /* asegura que el texto quede arriba de la imagen */
-  }
-
-  .column.left .column-image {
-    position: absolute; /* pega la imagen al borde */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-  }
-
-  .column.left .column-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .branh1,
-  .column.right .branding h2,
-  .column.right .branding h3 {
-    font-size: clamp(1.4rem, 6vw, 2rem);
-    line-height: 1.2;
-    transform: none;
-  }
-
-  /* Formulario centrado y ancho mayor en mobile */
-  .contform {
-    max-width: 90%;
-    padding: 1.2rem;
-    gap: 0.75rem;
-  }
-
-  .contform input,
-  .contform textarea,
-  .contform button {
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-  }
-}
-
-/* =========================
-   Responsive Ultra Mobile (<400px)
-   ========================= */
-@media (max-width: 400px) {
-  .container {
-    padding: 0;
-  }
-
-  .column {
-    padding: 0.8rem 0.5rem;
-    margin-bottom: 0;
-  }
-
-  /* Ajuste de títulos para pantallas muy pequeñas */
-  .branh1,
-  .column.right .branding h2,
-  .column.right .branding h3 {
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-  }
-
-  /* Formulario más cómodo en pantallas muy pequeñas */
-  .contform {
-    max-width: 95%;
-    padding: 0.8rem 0.5rem;
-    gap: 0.5rem;
-  }
-
-  .contform input,
-  .contform textarea,
-  .contform button {
-    font-size: 0.95rem;
-    padding: 0.6rem 0.8rem;
-  }
+.animate-scale-x {
+  animation: scale-x 2s infinite ease-in-out;
+  transform-origin: center;
 }
