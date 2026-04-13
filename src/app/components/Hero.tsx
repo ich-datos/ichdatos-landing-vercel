@@ -150,7 +150,7 @@ export default function Hero() {
               {renderTypedText()}
             </h1>
             <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90 tracking-wide">
-              Soluciones inteligentes para la gestión integral de información estratégica.
+              Soluciones inteligentes para la gestión de información estratégica.
             </p>
           </motion.div>
         </section>
@@ -188,7 +188,7 @@ export default function Hero() {
             <div className="space-y-8 text-center md:text-left">
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900">Gestión integral de <br /><span className="italic font-light text-gray-400">datos.</span></h3>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Transformamos datos en información de calidad para brindar un apoyo estratégico real al negocio. Actuamos como facilitadores que garantizan la escalabilidad empresarial.
+                Nuestra misión se centra en actuar como facilitadores de herramientas que le permitan a nuestros clientes contar con la mejor calidad de información para decidir con fundamentos, el futuro de su negocio.
               </p>
               <div className="h-[2px] w-24 bg-blue-600 mx-auto md:mx-0"></div>
             </div>
@@ -199,7 +199,7 @@ export default function Hero() {
         {/* PRODUCTOS */}
         <section id="productos" className="py-32 bg-white px-6 border-t border-gray-100">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-4xl font-bold italic mb-4 text-gray-900 uppercase tracking-tighter">Soluciones Integrales</h2>
+            <h2 className="text-4xl font-bold italic mb-4 text-gray-900 uppercase tracking-tighter">Productos destacados</h2>
             <p className="text-gray-400 font-light tracking-widest uppercase text-xs mb-20">Arquitectura y Estrategia</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
