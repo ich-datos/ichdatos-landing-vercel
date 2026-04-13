@@ -17,7 +17,7 @@ const NeuralNetwork = () => {
       y: Math.random() * 100,
       targetX: Math.random() * 100,
       targetY: Math.random() * 100,
-      size: Math.random() * 4 + 3, // Nodos más grandes
+      size: Math.random() * 4 + 3,
     }));
     setNodes(initialNodes);
     setMounted(true);
@@ -34,9 +34,9 @@ const NeuralNetwork = () => {
               key={`line-${i}-${j}`}
               x1={node.x} y1={node.y} x2={target.x} y2={target.y}
               stroke="#0047FF"
-              strokeWidth="0.4" // Líneas mucho más gruesas
+              strokeWidth="0.4"
               initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: [0, 1, 0], opacity: [0, 0.6, 0] }} // Mayor opacidad
+              animate={{ pathLength: [0, 1, 0], opacity: [0, 0.6, 0] }}
               transition={{
                 duration: Math.random() * 3 + 2,
                 repeat: Infinity,
@@ -54,7 +54,7 @@ const NeuralNetwork = () => {
             animate={{ 
               cx: [node.x, node.targetX, node.x], 
               cy: [node.y, node.targetY, node.y],
-              opacity: [0.2, 1, 0.2] // Contraste constante
+              opacity: [0.2, 1, 0.2] 
             }}
             transition={{
               duration: Math.random() * 8 + 7,
@@ -116,6 +116,7 @@ export default function Hero() {
 
   return (
     <>
+      {/* 1. PRELOADER */}
       {loading && (
         <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999]">
           <Image src="/logo ich (1).svg" alt="ICH" width={100} height={100} className="animate-pulse" />
@@ -123,13 +124,19 @@ export default function Hero() {
         </div>
       )}
 
+      {/* 2. NAVBAR */}
       <nav className="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 md:px-16 py-4 flex justify-between items-center">
-        <Image src="/logo ich (1).svg" alt="ICH Logo" width={70} height={35} />
+        <Image src="/logo ich (1).svg" alt="ICH Logo" width={70} height={35} className="cursor-pointer" onClick={() => router.push('/')} />
+        
         <div className="hidden md:flex gap-10 items-center text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-          <a href="#quienes-somos" className="hover:text-blue-600 transition-colors">Quiénes Somos</a>
+          <a href="#quienes-somos" className="hover:text-blue-600 transition-colors">¿Quiénes Somos?</a>
+          <button onClick={() => router.push('/que-hacemos')} className="hover:text-blue-600 transition-colors uppercase cursor-pointer">
+            ¿Qué hacemos?
+          </button>
           <a href="#productos" className="hover:text-blue-600 transition-colors">Productos</a>
-          <a href="https://ich-demos-hub.webflow.io/" target="_blank" className="hover:text-blue-600 transition-colors text-blue-500">Hub de Demos</a>
+          <a href="https://ich-demos-hub.webflow.io/" target="_blank" className="hover:text-blue-600 transition-colors text-blue-500 font-bold">Hub de Demos</a>
         </div>
+
         <button onClick={() => router.push('/agendar')} className="bg-blue-600 text-white text-[10px] px-7 py-2.5 rounded-full font-bold tracking-widest hover:bg-black transition-all shadow-lg shadow-blue-500/20">
           AGENDAR CITA
         </button>
@@ -137,7 +144,7 @@ export default function Hero() {
 
       <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0' : 'opacity-100'}`}>
         
-        {/* HERO */}
+        {/* HERO SECTION */}
         <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black text-center">
           {sliderImages.map((src, index) => (
             <div key={src} className={`absolute inset-0 z-0 transition-opacity duration-[2000ms] ${index === currentImage ? "opacity-100" : "opacity-0"}`}>
@@ -145,6 +152,7 @@ export default function Hero() {
             </div>
           ))}
           <div className="absolute inset-0 z-[1] bg-black/60 backdrop-blur-[1px]"></div>
+          
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="relative z-10 text-white px-6">
             <h1 className="text-5xl md:text-8xl font-light tracking-tighter mb-4 uppercase cursor-blink min-h-[1.2em]">
               {renderTypedText()}
@@ -155,7 +163,7 @@ export default function Hero() {
           </motion.div>
         </section>
 
-        {/* VISUALIZACIÓN */}
+        {/* VISUALIZACIÓN EN TIEMPO REAL */}
         <section className="py-32 bg-white px-6 border-t border-gray-100">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center text-center md:text-left">
             <div className="space-y-6">
@@ -188,7 +196,7 @@ export default function Hero() {
             <div className="space-y-8 text-center md:text-left">
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900">Gestión integral de <br /><span className="italic font-light text-gray-400">datos.</span></h3>
               <p className="text-gray-500 text-lg leading-relaxed">
-                Nuestra misión se centra en actuar como facilitadores de herramientas que le permitan a nuestros clientes contar con la mejor calidad de información para decidir con fundamentos, el futuro de su negocio.
+                Nuestra misión se centra en actuar como facilitadores de herramientas que le permitan a nuestros clientes contar con la mejor calidad de información para decidir con fundamentos el futuro de su negocio.
               </p>
               <div className="h-[2px] w-24 bg-blue-600 mx-auto md:mx-0"></div>
             </div>
@@ -196,7 +204,7 @@ export default function Hero() {
           </div>
         </section>
 
-        {/* PRODUCTOS */}
+        {/* PRODUCTOS DESTACADOS */}
         <section id="productos" className="py-32 bg-white px-6 border-t border-gray-100">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-4xl font-bold italic mb-4 text-gray-900 uppercase tracking-tighter">Productos destacados</h2>
@@ -237,11 +245,17 @@ export default function Hero() {
 
         {/* FOOTER */}
         <footer className="py-24 bg-slate-900 text-center flex flex-col items-center border-t border-slate-800">
-          <div className="grayscale invert opacity-50 mb-10"><Image src="/logo ich (1).svg" alt="ICH" width={80} height={40} /></div>
+          <div className="grayscale invert opacity-50 mb-10">
+            <Image src="/logo ich (1).svg" alt="ICH" width={80} height={40} className="mx-auto" />
+          </div>
           <div className="space-y-4">
-            <a href="mailto:info@ichdatos.com.ar" className="text-xs tracking-[0.6em] text-slate-400 hover:text-blue-400 transition-colors uppercase font-bold block">info@ichdatos.com.ar</a>
+            <a href="mailto:info@ichdatos.com.ar" className="text-xs tracking-[0.6em] text-slate-400 hover:text-blue-400 transition-colors uppercase font-bold block">
+              info@ichdatos.com.ar
+            </a>
             <div className="h-[1px] w-12 bg-slate-700 mx-auto"></div>
-            <p className="text-[10px] text-slate-500 tracking-[0.4em] uppercase font-light italic">Córdoba, Argentina • © 2026 ICH</p>
+            <p className="text-[10px] text-slate-500 tracking-[0.4em] uppercase font-light italic">
+              Córdoba, Argentina • © 2026 ICH
+            </p>
           </div>
         </footer>
       </div>
