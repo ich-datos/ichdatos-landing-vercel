@@ -72,25 +72,40 @@ export default function QueHacemos() {
   }, []);
 
   const sectores = [
-    { title: "Logística", icon: <LogisticaIcon />, items: ["Eficiencia de rutas", "Control de combustible", "Análisis de flota", "Tiempos de entrega"] },
-    { title: "Administración", icon: <AdministracionIcon />, items: ["Gestión de procesos", "Digitalización de archivos", "Control de activos", "Eficiencia de tareas"] },
-    { title: "Finanzas", icon: <FinanzasIcon />, items: ["Control presupuestario", "Análisis de desvíos", "Cashflow proyectado", "Rentabilidad por unidad"] },
-    { title: "Comercial", icon: <ComercialIcon />, items: ["Funnel de ventas", "Performance de asesores", "Objetivos vs Real", "Análisis de mercado"] },
+    { 
+      title: "Logística", 
+      icon: <LogisticaIcon />, 
+      items: ["Seguimiento de costos de transporte", "Forecast de compras", "Confección de surtido", "Clusterizacion de productos"] 
+    },
+    { 
+      title: "Administración", 
+      icon: <AdministracionIcon />, 
+      items: ["Control de cuentas", "Worflow de documentación automatizado", "Automatización de reportes mensuales", "Control de gastos fijos y variables"] 
+    },
+    { 
+      title: "Finanzas", 
+      icon: <FinanzasIcon />, 
+      items: ["Flujo de caja proyectado (Cashflow)", "Análisis de rentabilidad por unidad de negocio", "Seguimiento de inversiones y financiamiento", "Control de desvíos presupuestarios"] 
+    },
+    { 
+      title: "Comercial", 
+      icon: <ComercialIcon />, 
+      items: ["Embudo de ventas en tiempo real", "Scorecard por proveedor", "Analisis de performance", "Seguimiento de objetivos comerciales"] 
+    },
   ];
 
   return (
-    <main className="min-h-screen relative bg-white overflow-x-hiddenselection:bg-blue-100 ">
+    <main className="min-h-screen relative bg-white overflow-x-hidden selection:bg-blue-100">
       <motion.div style={{ y: yBg }} className="fixed inset-0 z-0 opacity-[0.12] pointer-events-none">
         <Image src="/hero-2.jpg" alt="Background" fill className="object-cover" priority />
       </motion.div>
 
-      {/* NAVBAR UNIFICADA CON EL HOME Y LOGO GRANDE */}
       <nav className="p-4 md:px-16 flex flex-wrap justify-between items-center border-b border-gray-100 sticky top-0 bg-white/95 backdrop-blur-lg z-[100] gap-y-3">
         <Image 
           src="/logo ich (1).svg" 
           alt="ICH" 
-          width={85} // Aumentado para mayor jerarquía
-          height={42} // Ajustado proporcionalmente
+          width={85} 
+          height={42} 
           className="cursor-pointer" 
           onClick={() => router.push('/')} 
         />
@@ -101,7 +116,6 @@ export default function QueHacemos() {
         <button onClick={() => router.push('/agendar')} className="bg-blue-600 text-white text-[8px] md:text-[10px] px-5 py-2 rounded-full font-bold order-2 md:order-3 tracking-widest uppercase">AGENDAR</button>
       </nav>
 
-      {/* MANIFIESTO COMPLETO */}
       <section className="py-20 px-6 md:px-16 bg-slate-900/95 text-white flex justify-center relative z-10">
         <div className="max-w-4xl text-center">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-sm md:text-lg font-light leading-relaxed tracking-wide text-slate-300 italic px-2">
@@ -111,10 +125,9 @@ export default function QueHacemos() {
         </div>
       </section>
 
-      {/* SECCIÓN MÓDULOS */}
       <section className="py-16 md:py-24 px-4 md:px-16 max-w-7xl mx-auto relative z-10 bg-transparent">
         <div className="mb-12 text-center min-h-[3em] flex flex-col items-center justify-center">
-          <h2 className="text-2xl md:text-4xl font-bold tracking-tight uppercase text-gray-900 px-2 cursor-blink">
+          <h2 className="text-xl md:text-4xl font-bold tracking-tight uppercase text-gray-900 px-2 cursor-blink">
             {displayText}
           </h2>
           <div className="h-1 w-16 bg-blue-600 mt-6"></div>

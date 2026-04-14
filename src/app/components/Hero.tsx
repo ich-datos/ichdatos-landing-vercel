@@ -109,19 +109,16 @@ export default function Hero() {
         </div>
       )}
 
-      {/* NAVBAR UNIFICADA */}
       <nav className="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 md:px-16 py-3 md:py-4 flex flex-wrap justify-between items-center gap-y-3">
-        {/* LOGO ICH CON MÁS JERARQUÍA */}
         <Image 
           src="/logo ich (1).svg" 
           alt="ICH Logo" 
-          width={85} // Aumentado para mayor jerarquía
-          height={42} // Ajustado proporcionalmente
+          width={85} 
+          height={42} 
           className="cursor-pointer" 
           onClick={() => router.push('/')} 
         />
         
-        {/* Menú con Tipografía Unificada: Todas Mayúsculas, mismo tracking y tamaño */}
         <div className="flex gap-4 md:gap-10 items-center text-[8px] md:text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase order-3 w-full justify-center md:w-auto md:order-2">
           <button onClick={() => router.push('/que-hacemos')} className="hover:text-blue-600 transition-colors uppercase">¿QUÉ HACEMOS?</button>
           <a href="#quienes-somos" className="hover:text-blue-600 transition-colors uppercase hidden sm:block">¿QUIÉNES SOMOS?</a>
@@ -212,24 +209,6 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* METODOLOGÍA */}
-        <section className="py-20 md:py-32 bg-gray-50 px-6 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
-            {[
-              { n: "Relevamiento", c: "Identificación de procesos clave." },
-              { n: "Diagnóstico", c: "Detección de oportunidades." },
-              { n: "Objetivos", c: "Plan estructurado de negocio." },
-              { n: "Capacitación", c: "Garantía de autonomía total." }
-            ].map((step, i) => (
-              <div key={i} className="space-y-3">
-                <div className="text-blue-600 font-bold text-lg italic">/0{i+1}</div>
-                <h5 className="font-bold text-xs md:text-lg uppercase text-gray-900 tracking-tighter">{step.n}</h5>
-                <p className="text-gray-500 text-[10px] md:text-sm leading-relaxed">{step.c}</p>
-              </div>
-            ))}
           </div>
         </section>
 
