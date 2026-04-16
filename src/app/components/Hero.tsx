@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
+// --- RED NEURONAL REFORZADA ---
 const NeuralNetwork = () => {
   const [mounted, setMounted] = useState(false);
   const [nodes, setNodes] = useState<any[]>([]);
@@ -68,6 +69,7 @@ export default function Hero() {
   const phraseHighlight = "DATOS";
   const fullText = phraseBase + phraseHighlight;
   const sliderImages = ["/hero-2.jpg", "/hero-3.jpg", "/hero-4.jpg", "/hero-5.jpg"];
+  const clientLogos = [1, 2, 3, 4, 5];
 
   useEffect(() => {
     if (!loading) {
@@ -110,14 +112,7 @@ export default function Hero() {
       )}
 
       <nav className="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 md:px-16 py-3 md:py-4 flex flex-wrap justify-between items-center gap-y-3">
-        <Image 
-          src="/logo ich (1).svg" 
-          alt="ICH Logo" 
-          width={85} 
-          height={42} 
-          className="cursor-pointer" 
-          onClick={() => router.push('/')} 
-        />
+        <Image src="/logo ich (1).svg" alt="ICH Logo" width={85} height={42} className="cursor-pointer" onClick={() => router.push('/')} />
         
         <div className="flex gap-4 md:gap-10 items-center text-[8px] md:text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase order-3 w-full justify-center md:w-auto md:order-2">
           <button onClick={() => router.push('/que-hacemos')} className="hover:text-blue-600 transition-colors uppercase">¿QUÉ HACEMOS?</button>
@@ -133,6 +128,7 @@ export default function Hero() {
 
       <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0' : 'opacity-100'}`}>
         
+        {/* HERO SECTION */}
         <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black text-center px-4">
           {sliderImages.map((src, index) => (
             <div key={src} className={`absolute inset-0 z-0 transition-opacity duration-[2000ms] ${index === currentImage ? "opacity-100" : "opacity-0"}`}>
@@ -141,7 +137,7 @@ export default function Hero() {
           ))}
           <div className="absolute inset-0 z-[1] bg-black/60 backdrop-blur-[1px]"></div>
           
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10 text-white">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="relative z-10 text-white">
             <h1 className="text-4xl md:text-8xl font-light tracking-tighter mb-4 uppercase cursor-blink min-h-[1.2em]">
               {renderTypedText()}
             </h1>
@@ -151,16 +147,40 @@ export default function Hero() {
           </motion.div>
         </section>
 
-        <section className="py-20 md:py-32 bg-white px-6 border-t border-gray-100">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center text-center md:text-left">
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-bold italic text-gray-900">Visualización en Tiempo Real</h3>
-              <p className="text-gray-500 text-lg leading-relaxed">
+        {/* CONFIAN EN NOSOTROS (Espaciado reducido) */}
+        <section className="py-12 bg-white overflow-hidden border-b border-gray-50">
+          <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+            <h2 className="text-xl md:text-2xl font-bold italic text-gray-400 uppercase tracking-[0.2em]">
+              Confían en nosotros
+            </h2>
+          </div>
+
+          <div className="relative flex overflow-x-hidden group">
+            <motion.div 
+              className="flex whitespace-nowrap items-center"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            >
+              {[...clientLogos, ...clientLogos].map((num, index) => (
+                <div key={index} className="mx-10 md:mx-20 flex items-center justify-center w-28 md:w-40 h-20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 ease-in-out transform hover:scale-110">
+                  <img src={`/cliente-${num}.jpg`} alt={`Cliente ${num}`} className="max-w-full max-h-full object-contain" />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* VISUALIZACIÓN EN TIEMPO REAL (Espaciado reducido) */}
+        <section className="py-16 md:py-24 bg-white px-6">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center text-center md:text-left">
+            <div className="space-y-4">
+              <h3 className="text-3xl md:text-4xl font-bold italic text-gray-900 leading-tight">Visualización en Tiempo Real</h3>
+              <p className="text-gray-500 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
                 Nuestras herramientas permiten observar cómo evolucionan sus métricas críticas mientras los datos fluyen por la arquitectura de ICH.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4 md:gap-8 bg-gray-50 p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] border border-gray-200 shadow-xl">
-              <div className="flex flex-col justify-end h-32 md:h-48 space-y-3">
+            <div className="grid grid-cols-2 gap-4 md:gap-8 bg-gray-50 p-6 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-gray-200 shadow-xl">
+              <div className="flex flex-col justify-end h-32 md:h-40 space-y-3">
                 {[60, 100, 80].map((h, i) => (
                   <div key={i} className="w-full bg-gray-200 rounded-full h-3 md:h-4">
                     <motion.div initial={{ width: 0 }} whileInView={{ width: `${h}%` }} transition={{ duration: 1.5, delay: i * 0.2 }} className="bg-blue-600 h-full" />
@@ -177,10 +197,11 @@ export default function Hero() {
           </div>
         </section>
 
-        <section id="quienes-somos" className="py-20 md:py-32 bg-gray-50 px-6 md:px-24 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="space-y-8 text-center md:text-left order-2 md:order-1">
-              <h3 className="text-3xl md:text-5xl font-bold text-gray-900 uppercase tracking-tighter">Gestión integral de <br className="hidden md:block" /><span className="italic font-light text-gray-400 font-serif">datos.</span></h3>
+        {/* QUIÉNES SOMOS (Espaciado reducido) */}
+        <section id="quienes-somos" className="py-16 md:py-24 bg-gray-50 px-6 md:px-24 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div className="space-y-6 text-center md:text-left order-2 md:order-1">
+              <h3 className="text-3xl md:text-5xl font-bold text-gray-900 uppercase tracking-tighter">Gestión integral de <br className="hidden md:block" /><span className="italic font-light text-gray-400 font-serif lowercase">datos.</span></h3>
               <p className="text-gray-500 text-lg leading-relaxed italic">
                 Nuestra misión se centra en actuar como facilitadores de herramientas que le permitan a nuestros clientes contar con la mejor calidad de información para decidir con fundamentos el futuro de su negocio.
               </p>
@@ -192,19 +213,20 @@ export default function Hero() {
           </div>
         </section>
 
-        <section id="productos" className="py-20 md:py-32 bg-white px-6 border-t border-gray-100">
+        {/* PRODUCTOS DESTACADOS (Espaciado reducido) */}
+        <section id="productos" className="py-16 md:py-24 bg-white px-6 border-t border-gray-100">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold italic mb-4 text-gray-900 uppercase">Productos destacados</h2>
-            <p className="text-gray-400 font-light tracking-widest uppercase text-xs mb-12 md:mb-20 font-serif">Arquitectura y Estrategia</p>
+            <h2 className="text-3xl md:text-4xl font-bold italic mb-3 text-gray-900 uppercase">Productos destacados</h2>
+            <p className="text-gray-400 font-light tracking-widest uppercase text-xs mb-10 md:mb-16">Arquitectura y Estrategia</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { t: "Arquitectura de Datos", d: "Procesos ETL y estructuración eficiente para bases madre robustas." },
                 { t: "Gestión de OKRs & KPIs", d: "Identificación de métricas alineadas 100% a sus objetivos estratégicos." },
                 { t: "Herramientas a Medida", d: "Dashboards dinámicos y visualización automatizada en tiempo real." }
               ].map((item, i) => (
-                <div key={i} className="bg-gray-50 p-8 md:p-12 hover:bg-blue-600 group transition-all duration-700 border border-gray-100 rounded-[2rem] md:rounded-[2.5rem]">
-                  <span className="text-blue-600 group-hover:text-white font-mono text-sm block mb-6">0{i+1}.</span>
-                  <h4 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-white">{item.t}</h4>
+                <div key={i} className="bg-gray-50 p-8 md:p-10 hover:bg-blue-600 group transition-all duration-700 border border-gray-100 rounded-[2rem] md:rounded-[2.5rem]">
+                  <span className="text-blue-600 group-hover:text-white font-mono text-sm block mb-5">0{i+1}.</span>
+                  <h4 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-white">{item.t}</h4>
                   <p className="text-gray-500 group-hover:text-blue-100 leading-relaxed text-sm md:text-base">{item.d}</p>
                 </div>
               ))}
@@ -212,11 +234,30 @@ export default function Hero() {
           </div>
         </section>
 
-        <footer className="py-20 bg-slate-900 text-center flex flex-col items-center border-t border-slate-800">
-          <div className="grayscale invert opacity-50 mb-8">
+        {/* METODOLOGÍA (Espaciado reducido) */}
+        <section className="py-16 md:py-24 bg-gray-50 px-6 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
+            {[
+              { n: "Relevamiento", c: "Identificación de procesos clave." },
+              { n: "Diagnóstico", c: "Detección de oportunidades." },
+              { n: "Objetivos", c: "Plan estructurado de negocio." },
+              { n: "Capacitación", c: "Garantía de autonomía total." }
+            ].map((step, i) => (
+              <div key={i} className="space-y-2">
+                <div className="text-blue-600 font-bold text-lg italic">/0{i+1}</div>
+                <h5 className="font-bold text-xs md:text-lg uppercase text-gray-900 tracking-tighter">{step.n}</h5>
+                <p className="text-gray-500 text-[10px] md:text-sm leading-relaxed px-2">{step.c}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer className="py-16 bg-slate-900 text-center flex flex-col items-center border-t border-slate-800">
+          <div className="grayscale invert opacity-50 mb-6">
             <Image src="/logo ich (1).svg" alt="ICH" width={70} height={35} className="mx-auto" />
           </div>
-          <div className="space-y-4 px-6">
+          <div className="space-y-3 px-6">
             <a href="mailto:info@ichdatos.com.ar" className="text-[9px] md:text-xs tracking-[0.5em] text-slate-400 hover:text-blue-400 transition-colors uppercase font-bold block">
               info@ichdatos.com.ar
             </a>
