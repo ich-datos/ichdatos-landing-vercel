@@ -71,6 +71,29 @@ export default function Hero() {
   const sliderImages = ["/hero-2.jpg", "/hero-3.jpg", "/hero-4.jpg", "/hero-5.jpg"];
   const clientLogos = [1, 2, 3, 4, 5];
 
+  // --- BLOQUEO DE SEGURIDAD (ANTICOPIA) ---
+  useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => e.preventDefault();
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+        (e.metaKey && e.altKey && (e.key === "i" || e.key === "j" || e.key === "c")) || // Mac
+        (e.ctrlKey && e.key === "u") ||
+        (e.metaKey && e.key === "u") // Mac
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("contextmenu", handleContextMenu);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   useEffect(() => {
     if (!loading) {
       let i = 0;
@@ -128,7 +151,6 @@ export default function Hero() {
 
       <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0' : 'opacity-100'}`}>
         
-        {/* HERO SECTION */}
         <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black text-center px-4">
           {sliderImages.map((src, index) => (
             <div key={src} className={`absolute inset-0 z-0 transition-opacity duration-[2000ms] ${index === currentImage ? "opacity-100" : "opacity-0"}`}>
@@ -147,7 +169,7 @@ export default function Hero() {
           </motion.div>
         </section>
 
-        {/* CONFIAN EN NOSOTROS (Espaciado reducido) */}
+        {/* CONFIAN EN NOSOTROS */}
         <section className="py-12 bg-white overflow-hidden border-b border-gray-50">
           <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
             <h2 className="text-xl md:text-2xl font-bold italic text-gray-400 uppercase tracking-[0.2em]">
@@ -163,14 +185,14 @@ export default function Hero() {
             >
               {[...clientLogos, ...clientLogos].map((num, index) => (
                 <div key={index} className="mx-10 md:mx-20 flex items-center justify-center w-28 md:w-40 h-20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 ease-in-out transform hover:scale-110">
-                  <img src={`/cliente-${num}.jpg`} alt={`Cliente ${num}`} className="max-w-full max-h-full object-contain" />
+                  <img src={`/cliente-${num}.jpg`} alt={`Cliente ${num}`} className="max-w-full max-h-full object-contain pointer-events-none select-none" />
                 </div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* VISUALIZACIÓN EN TIEMPO REAL (Espaciado reducido) */}
+        {/* VISUALIZACIÓN */}
         <section className="py-16 md:py-24 bg-white px-6">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center text-center md:text-left">
             <div className="space-y-4">
@@ -197,7 +219,7 @@ export default function Hero() {
           </div>
         </section>
 
-        {/* QUIÉNES SOMOS (Espaciado reducido) */}
+        {/* QUIÉNES SOMOS */}
         <section id="quienes-somos" className="py-16 md:py-24 bg-gray-50 px-6 md:px-24 border-t border-gray-200">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div className="space-y-6 text-center md:text-left order-2 md:order-1">
@@ -213,7 +235,7 @@ export default function Hero() {
           </div>
         </section>
 
-        {/* PRODUCTOS DESTACADOS (Espaciado reducido) */}
+        {/* PRODUCTOS */}
         <section id="productos" className="py-16 md:py-24 bg-white px-6 border-t border-gray-100">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold italic mb-3 text-gray-900 uppercase">Productos destacados</h2>
@@ -234,7 +256,7 @@ export default function Hero() {
           </div>
         </section>
 
-        {/* METODOLOGÍA (Espaciado reducido) */}
+        {/* METODOLOGÍA */}
         <section className="py-16 md:py-24 bg-gray-50 px-6 border-t border-gray-200">
           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
             {[
