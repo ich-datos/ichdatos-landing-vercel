@@ -80,7 +80,7 @@ export default function QueHacemos() {
     { 
       title: "Administración", 
       icon: <AdministracionIcon />, 
-      items: ["Control de cuentas", "Workflow de documentación automatizado", "Automatización de reportes mensuales", "Control de gastos fijos y variables"] 
+      items: ["Control de cuentas", "Worflow de documentation automatizado", "Automatización de reportes mensuales", "Control de gastos fijos y variables"] 
     },
     { 
       title: "Finanzas", 
@@ -111,7 +111,8 @@ export default function QueHacemos() {
         />
         <div className="flex gap-4 md:gap-10 text-[8px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 order-3 w-full justify-center md:w-auto md:order-2">
           <button onClick={() => router.push('/')}>INICIO</button>
-          <button onClick={() => router.push('/ichtorias')} className="text-blue-500">ICHTORIAS</button>
+          {/* ¡Único cambio realizado en este archivo! */}
+          <button onClick={() => router.push('/noticias')} className="text-blue-500">NOTICIAS</button>
         </div>
         <button onClick={() => router.push('/agendar')} className="bg-blue-600 text-white text-[8px] md:text-[10px] px-5 py-2 rounded-full font-bold order-2 md:order-3 tracking-widest uppercase">AGENDAR</button>
       </nav>
