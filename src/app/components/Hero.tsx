@@ -212,6 +212,7 @@ export default function Hero() {
     { id: 3, src: "/cliente-3.png", isDarkComponent: false },
     { id: 4, src: "/cliente-4.png", isDarkComponent: true }, 
     { id: 5, src: "/cliente-5.png", isDarkComponent: false },
+    { id: 6, src: "/cliente-6.png", isDarkComponent: true }, // Sexto cliente agregado
   ];
 
   useEffect(() => {
